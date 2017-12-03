@@ -71,5 +71,8 @@ ps: 上传后的逻辑层面的失败需要在外部处理。
 
 此处的依赖列表是指需要用户手动引入到全局的js资源
 
-1. http://static.uc108.com/cdn/webuploader/0.1.6/webuploader.html5only.min.js
+1. [webuploader](http://fexteam.gz01.bdysite.com/webuploader/)
+
+内部引用地址
+http://static.uc108.com/cdn/webuploader/0.1.6/webuploader.html5only.min.js
 
