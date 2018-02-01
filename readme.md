@@ -4,9 +4,9 @@
 
 ## 使用
 
-从npm安装`ct-adc-uploaders`
+从npm安装`ct-adc-importer`
 ```
-npm install ct-adc-uploaders
+npm install ct-adc-importer
 ```
 在代码中引用
 ```
