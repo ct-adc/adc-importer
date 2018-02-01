@@ -32,6 +32,10 @@
                 type: Boolean,
                 default: false
             },
+            auto: {
+                type: Boolean,
+                default: false
+            },
             buttonText: {
                 type: String,
                 default: '导入文件'
@@ -119,7 +123,7 @@
                     pick: {
                         id: that.$refs.root
                     },
-                    auto: true,
+                    auto: that.auto,
                     chunked: that.chunked,
                     server: that.server,
                     method: that.method,
@@ -171,6 +175,9 @@
                 this.loading = false;
                 this.uploader.stop(true);
             },
+            upload(){
+                this.uploader.upload();
+            },
             initTip(){
                 $(this.$refs.root).tooltip({
                     title: this.tip,
@@ -205,6 +212,11 @@
             accept(){
                 this.uploader.destroy();
                 this.initUploader();
+            },
+            auto(newVal){
+                this.uploader.destroy();
+                this.initUploader();
+                this.uploader.option('auto', newVal);
             },
             fileSizeLimit(){
                 this.uploader.destroy();

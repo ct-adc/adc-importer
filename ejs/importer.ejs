@@ -11,6 +11,7 @@
     <div class="row">
         <div class="col-sm-3">
             <importer :has-input="hasInput"
+                      :auto="auto"
                       :server="server"
                       :method="method"
                       :form-data="formData"
@@ -21,7 +22,10 @@
                       :chunked="chunked"
                       :tip="tip"
                       :direction="direction"
-                      @success="importSuccess" @error="importError"></importer>
+                      @success="importSuccess" @error="importError" ref="importer"></importer>
+        </div>
+        <div class="col-sm-1" v-if="!auto">
+          <button class="btn btn-primary btn-sm" @click="upload">手动开始上传</button>
         </div>
     </div>
     <div class="mt10">
@@ -36,6 +40,7 @@
         <button type="button" class="btn btn-default" @click="changeChunked">改变分片配置</button>
         <button type="button" class="btn btn-default" @click="changeBtnText">改变按钮文字</button>
         <button type="button" class="btn btn-default" @click="changeHasInput">改变上传样式</button>
+        <button type="button" class="btn btn-default" @click="changeAuto">改变上传方式（自动/手动）</button>
     </div>
 
 </div>

@@ -13,15 +13,16 @@ new Vue({
         server: '/api/patch/uploadPatch',
         method: 'POST',
         accept: {
-            extensions: '',
-            mimeTypes: ''
+            extensions: 'zip',
+            mimeTypes: 'application/zip '
         },
         chunked: true,
         disabled: false,
         tip: '错误提示',
         direction: 'bottom',
         buttonText: '上传文件',
-        hasInput: false
+        hasInput: false,
+        auto: false
     },
     components: {
         Importer
@@ -70,6 +71,12 @@ new Vue({
         },
         changeHasInput(){
             this.hasInput = !this.hasInput;
+        },
+        changeAuto() {
+            this.auto = !this.auto;
+        },
+        upload() {
+            this.$refs.importer.upload();
         }
     }
 });
