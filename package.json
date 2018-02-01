@@ -4,6 +4,7 @@
   "description": "A Vue.js project",
   "author": "skysunshine99 <skysunshine99@126.com>",
   "private": false,
+  "main": "lib/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
