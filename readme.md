@@ -34,8 +34,8 @@ method | 上传方式 | String | 'POST'
 accept | 和webuploader中accept配置项一致，包含extensions和mimeTypes两项。详见下方说明 | Object | null
 fileSizeLimit | 可以接受的文件大小(单位为B) | Number | undefined
 formData | 随文件上传的参数 | Object | {}
-chunked | 是否分片上传文件 | Boolean | true
-disabled | 按钮是否可用 | Boolean | true
+chunked | 是否分片上传文件 | Boolean | false
+disabled | 按钮是否可用 | Boolean | false
 tip | disabled为false时生效。当tip为''时不显示tip框 | String | ''
 direction | tip的方向 | String | 'left'/'right'/'top'/'bottom'
 hasInput | 是否需要input框 | Boolean | false
