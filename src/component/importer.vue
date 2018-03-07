@@ -50,15 +50,12 @@
             },
             method: {
                 type: String,
-                default: 'GET'
+                default: 'POST'
             },
             accept: {
                 type: Object,
                 default(){
-                    return {
-                        extensions: '',
-                        mimeTypes: ''
-                    };
+                    return null;
                 }
             },
             fileSizeLimit: {
@@ -72,11 +69,11 @@
             },
             chunked: {
                 type: Boolean,
-                default: true
+                default: false
             },
             sendAsBinary: {
                 type: Boolean,
-                default: true
+                default: false
             },
             headers: {
                 type: Object,
@@ -95,6 +92,14 @@
             tip: {
                 type: String,
                 default: ''
+            },
+            compress: {
+                type: Boolean,
+                default: false
+            },
+            multiple: {
+                type: Boolean,
+                default: false
             }
         },
         data() {
@@ -121,14 +126,16 @@
 
                 that.uploader = WebUploader.create({
                     pick: {
-                        id: that.$refs.root
+                        id: that.$refs.root,
+                        multiple: that.multiple
                     },
                     auto: that.auto,
                     chunked: that.chunked,
                     server: that.server,
                     method: that.method,
                     accept: that.accept,
-                    fileSizeLimit: that.fileSizeLimit
+                    fileSizeLimit: that.fileSizeLimit,
+                    compress: that.compress
                 });
                 that.uploader.on('uploadBeforeSend', function(object, data, headers) {
                     utility.base.extend(data, that.formData);

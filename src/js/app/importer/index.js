@@ -14,7 +14,7 @@ new Vue({
         method: 'POST',
         accept: {
             extensions: 'zip',
-            mimeTypes: 'application/zip '
+            mimeTypes: 'application/zip'
         },
         chunked: true,
         disabled: false,
@@ -22,7 +22,7 @@ new Vue({
         direction: 'bottom',
         buttonText: '上传文件',
         hasInput: false,
-        auto: false
+        auto: true
     },
     components: {
         Importer
