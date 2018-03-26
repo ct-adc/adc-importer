@@ -1,3 +1,7 @@
+#
+
+不再维护，请使用[ct-adc-uploader](https://github.com/ct-adc/adc-uploader)
+
 # 导入文件组件
 
 ## [在线demo](https://codepen.io/rubyisapm/pen/WjYVPp)
